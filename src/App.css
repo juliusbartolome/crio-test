@@ -1,0 +1,14 @@
+.app {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.app .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.app .row .col {
+  padding-right: 0;
+  padding-left: 0;
+}
