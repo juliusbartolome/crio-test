@@ -103,4 +103,6 @@ export default class Store implements IObservable {
 
   public getSelectedElements = (): Element[] => this.state.selectedElements;
 
+  public getNonSelectedElements = (): Element[] => _.difference(this.state.ids, this.state.selectedElements.map(e => e.id))
+                                                    .map(id => this.state.elements[id]);
 }

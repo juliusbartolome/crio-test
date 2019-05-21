@@ -1,5 +1,6 @@
 import _ from "lodash";
 import Store from "../../store";
+import RENDER_PROPS from "../../constants/RenderProps";
 
 export default class Renderer {
 
@@ -21,7 +22,8 @@ export default class Renderer {
 
     this.canvasContext.clearRect(0, 0, this.canvasContext.canvas.width, this.canvasContext.canvas.height);
 
-    this.store.getElements().forEach(e => e.draw(this.canvasContext));
+    this.store.getNonSelectedElements().forEach(e => e.draw(this.canvasContext, RENDER_PROPS.POLYGON_OUTLINE));
+    this.store.getSelectedElements().forEach(e => e.draw(this.canvasContext, RENDER_PROPS.POLYGON_SELECTED_OUTLINE))
 
     requestAnimationFrame(this.render);
   }
