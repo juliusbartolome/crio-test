@@ -4,6 +4,7 @@ import Element from "./Element";
 import RenderingUtils from "../../utils/rendering";
 
 import RENDER_PROPS from "../../constants/RenderProps";
+import { render } from "react-dom";
 
 export default class Polygon extends Element {
   points: IPoint[];
@@ -14,6 +15,6 @@ export default class Polygon extends Element {
   }
 
   draw = (context: CanvasRenderingContext2D, renderProps: IRenderProps) => {
-    RenderingUtils.renderLine(context, this.points, RENDER_PROPS.POLYGON_OUTLINE);
+    RenderingUtils.renderLine(context, this.points, renderProps);
   }
 }
